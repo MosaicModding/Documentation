@@ -1,0 +1,59 @@
+import Card from "../components/Card.tsx";
+
+<div className="container">
+    This is the official documentation for all Mosaic Modding projects and primarily for [Sully's Mod].
+
+    The documentation is divided into Mod Docs and Dev Docs.
+
+    Mod Docs holds the documentation for all publicly available content mods.
+    Dev Docs holds the documentation for any library mod we have.
+
+    # Mod Docs
+    <div className="row">
+        <div className="col category">
+            <Card
+                title="Sully's Mod"
+                body="A collection of interesting and unique features."
+                link="/sullysmod/about/"
+                linkTitle="Learn More"
+            />
+        </div>
+        <div className="col category">
+            <Card
+                title="Painters Inc"
+                body="A collaborative painting mod."
+                link="/paintersinc/about/"
+                linkTitle="Learn More"
+            />
+        </div>
+    </div>
+    # Dev Docs
+    <div className="row">
+        <div className="col category">
+            <Card
+                title="Cosmetics"
+                body="A cape mod for contributors"
+                link="/cosmetics/about/"
+                linkTitle="Learn More"
+            />
+        </div>
+        <div className="col category">
+            <Card
+                title="Tessera"
+                body="A dev utility mod for debugging and testing."
+                link="/tessera/about/"
+                linkTitle="Learn More"
+            />
+        </div>
+        <div className="col category">
+            <Card
+                title="Plaster"
+                body="A multiloader utility library."
+                link="/plaster/about/"
+                linkTitle="Learn More"
+            />
+        </div>
+    </div>
+</div>
+
+[Sully's Mod]: https://www.curseforge.com/minecraft/mc-mods/sullys-mod
