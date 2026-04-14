@@ -1,0 +1,25 @@
+---
+title: Amber
+---
+import ShowcaseBlock from "../src/components/ShowcaseBlock";
+
+<ShowcaseBlock title="Amber Blocks" image="img/amber_blocks.gif">
+    There are multiple different types of Amber Blocks.
+    1. There is **Amber**, which is the transparent block you can find in caves.
+    2. Then there is **Rough Amber** which drops when mining **Amber** (even when using Silk Touch).
+    3. And then there are multiple decoration blocks, which are crafted from **Rough Amber**.
+</ShowcaseBlock>
+
+## Melting Amber
+When close to a light source like a torch or lava, any amber block (that has no frozen entity inside) will be set in a melting state.
+In melting state any entity slowly sinks into the block. The rest of the block's melting behavior varies depending on type of Amber block though.
+
+**Rough Amber** and its decoration blocks slow down any entity walking through it and will suffocate them if they are completely covered by amber.
+
+Regular **Amber** also slows down entities, but when the entity is fully covered, it will freeze the entity inside it and will stop melting.
+Breaking any of amber blocks that are responsible for keeping the entity frozen, will cause the other responsible blocks to break as well and will free the entity.
+
+## Producing Amber
+Since breaking Amber blocks drops **Rough Amber**, there has to be a different way to get more of the regular transparent **Amber**.
+To do that you can place an amber block above a cauldron and set it in melting state. Then it will start sweating amber drops, that slowly fill the cauldron.
+When the cauldron is full, you can pick up the content with a bucket and place it where ever you want your **Amber** Block to be.
