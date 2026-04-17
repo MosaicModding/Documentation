@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Mosaic Modding Documentation',
   tagline: 'We like modding',
-  favicon: 'img/favicon.ico', //TODO this isn't correct on prod
+  favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
