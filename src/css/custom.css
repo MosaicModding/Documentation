@@ -90,11 +90,28 @@ a.no-underline {
 .item-card__content {
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1px;
-    max-width: 100%;
     justify-content: center;
     align-items: center;
+}
+
+.item-attribute-card__content {
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid var(--box-outline);
+}
+
+.hearts {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.hearts img {
+    width: 11px;
+    height: 11px;
 }
 
 .item-card__image {
@@ -108,4 +125,34 @@ a.no-underline {
     gap: 1rem;
     align-items: flex-start;
     margin-bottom: 10px;
+}
+
+.attack-card {
+    margin-left: 20px;
+}
+
+.attack-card ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.attack-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.attack-header h4 {
+    margin: 0;
+    line-height: 1;
+    font-size: inherit;
+}
+
+.attack-header img {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    object-fit: contain;
 }

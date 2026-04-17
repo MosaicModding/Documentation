@@ -2,8 +2,60 @@
 title: The Mauled
 ---
 import ShowcaseBlock from "../src/components/ShowcaseBlock";
-import EntityAttributes from "../src/components/EntityAttributes";
+import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
+import SpawnConfig, {Dimension} from "../src/components/SpawnConfig";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ShowcaseBlock title="The Mauled" image="img/mauled.png">
-    <EntityAttributes health={26}/>
-</ShowcaseBlock>
+export const ranged = {
+    type: WeaponType.Ranged,
+    weapontype: "bow",
+    easy: 2,
+    normal: 3,
+    hard: 4
+}
+
+export const melee = {
+    type: WeaponType.Melee,
+    weapontype: "iron_sword",
+    easy: 3,
+    normal: 5,
+    hard: 7
+}
+
+export const spawnRules = [
+        "Only in deepslate levels",
+        "In all biomes besides the Deep Dark"
+]
+
+<Tabs queryString="overview-tab">
+    <TabItem value={"showcase"} label={"View"}>
+        <ShowcaseBlock image="img/mauled.png"/>
+    </TabItem>
+    <TabItem value={"attributes"} label={"Attributes"}>
+        <EntityAttributes
+            health={26}
+            behavior={MobBehavior.Hostile}
+            attacks={[ranged, melee]}
+            speed={["With Skin: 0.15 for ranged and 0.18 for melee","Without Skin: 0.25 for ranged and 0.3 for melee"]}
+        />
+    </TabItem>
+    <TabItem value={"spawning"} label={"Spawning"}>
+        <SpawnConfig
+        dim={Dimension.Overworld}
+        amount={"Between 2 and 4 per chunk"}
+        spawnRules={spawnRules}
+        />
+    </TabItem>
+</Tabs>
+
+
+The Mauled is a short skeleton that spawns below deepslate levels.
+
+It has a bow and an iron sword. <br/>
+By default it will use the bow for ranged attacks and will try to circle around you like a normal skeleton.
+However, if you get too close, it will switch to a sword and try to close distance by itself.
+
+When the Mauled is half dead, it sheds its flesh (sometimes dropping rotten flesh) and becomes faster, prefers the sword and tries to hunt you.
+
+
