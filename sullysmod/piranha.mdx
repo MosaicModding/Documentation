@@ -1,0 +1,53 @@
+---
+title: Piranha
+sidebar_position: 4
+---
+import ShowcaseBlock from "../src/components/ShowcaseBlock";
+import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
+import SpawnConfig, {Dimension} from "../src/components/SpawnConfig";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+export const spawnRules = [
+    "Can only spawn in water",
+    "Can spawn in jungle biomes and the mangrove swamp"
+]
+
+export const unarmed = {
+    type: WeaponType.Unarmed,
+    easy: 2,
+    normal: 2,
+    hard: 2
+}
+
+<Tabs queryString="overview-tab">
+    <TabItem value={"image"} label={"Image"}>
+        <ShowcaseBlock image="img/piranha.png"/>
+    </TabItem>
+    <TabItem value={"attributes"} label={"Attributes"}>
+        <EntityAttributes
+            health={8}
+            behavior={MobBehavior.Neutral}
+            attacks={[unarmed]}
+            speed={["Default: 0.7", "Angry: 1.05"]}
+        />
+    </TabItem>
+    <TabItem value={"spawning"} label={"Spawning"}>
+        <SpawnConfig
+            dim={Dimension.Overworld}
+            amount={"Between 2 and 5 per chunk"}
+            spawnRules={spawnRules}
+        />
+    </TabItem>
+</Tabs>
+
+The **Piranha** is a fish that spawns in groups in jungle biomes and the mangrove swamp. <br/>
+It is only aggressive to small entities, entities that do not have full health, entities that attacked it and boats.
+Besides boats, it will only attack organic mobs! <br/>
+If the **Piranha** kills an entity that drops meat, it will consume the meat and heal slightly. <br/>
+
+If the **Piranha** kills a zombie or a zombie horse, they will turn into a skeleton or a skeleton horse. <br/>
+The **Piranha** drops `Raw Piranha` and has a `0.27` chance of dropping a `Piranha Tooth`.
+
+## Throwing Knife
+

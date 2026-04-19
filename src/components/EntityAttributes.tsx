@@ -1,5 +1,6 @@
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import React from "react";
+import Hearts from "@site/src/components/Hearts";
 
 export default function EntityAttributes(props: any) {
     return (
@@ -28,10 +29,12 @@ export default function EntityAttributes(props: any) {
                             <div className={"attack-card"}>
                                 <div className={"attack-header"}>
                                     <h4>{item.type}</h4>
-                                    <img
-                                        src={useBaseUrl("/img/" + item.weapontype + ".png")}
-                                        alt={item.weapontype + " icon"}
-                                    />
+                                    {item.weapontype !== null && item.weapontype !== undefined && (
+                                        <img
+                                            src={useBaseUrl("/img/" + item.weapontype + ".png")}
+                                            alt={item.weapontype + " icon"}
+                                        />
+                                    )}
                                 </div>
                                 <ul>
                                     <li>Easy:<Hearts amount={item.easy}/></li>
@@ -56,38 +59,6 @@ export default function EntityAttributes(props: any) {
     );
 }
 
-function calculateHearts(count: number) {
-    const full = Math.floor(count / 2);
-    const half = count % 2;
-    return { full, half };
-}
-
-export function Hearts(props: any) {
-    const fullImage = useBaseUrl("/img/full_heart.png");
-    const halfImage = useBaseUrl("/img/half_heart.png");
-    let heartAmount = calculateHearts(props.amount);
-    return (
-        <div className={"hearts"}>
-            {props.amount} (
-            {Array.from({ length: heartAmount.full }).map((_, index) => (
-                <img
-                    key={index}
-                    src={fullImage}
-                    alt={"Full Heart icon"}
-                />
-            ))}
-            {Array.from({ length: heartAmount.half }).map((_, index) => (
-                <img
-                    key={index}
-                    src={halfImage}
-                    alt={"Half Heart icon"}
-                />
-            ))}
-            )
-        </div>
-    );
-}
-
 export enum MobBehavior {
     Passive = "Passive",
     Neutral = "Neutral",
@@ -96,7 +67,7 @@ export enum MobBehavior {
 
 interface Damage {
     type: WeaponType;
-    weapontype: string;
+    weapontype: string | null;
     easy: number | string;
     normal: number | string;
     hard: number | string;
