@@ -1,7 +1,6 @@
 import React from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 export default function ShowcaseBlock(props: any) {
     return (
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -14,7 +13,7 @@ export default function ShowcaseBlock(props: any) {
                 <div className="item-card__content">
                     <img
                         src={useBaseUrl('/' + props.image)}
-                        alt={props.title}
+                        alt={props.image}
                         className="item-card__image"
                     />
                 </div>

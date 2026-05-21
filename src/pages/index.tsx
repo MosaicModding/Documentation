@@ -20,7 +20,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="The offical Wiki for the Mosaic Modding Team">
       <HomepageHeader/>
       <div className={clsx(styles.introduction)}>
           <IndexContent/>

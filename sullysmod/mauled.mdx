@@ -1,5 +1,6 @@
 ---
 title: The Mauled
+sidebar_position: 5
 ---
 import ShowcaseBlock from "../src/components/ShowcaseBlock";
 import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
@@ -18,19 +19,20 @@ export const ranged = {
 export const melee = {
     type: WeaponType.Melee,
     weapontype: "iron_sword",
-    easy: 3,
-    normal: 5,
-    hard: 7
+    easy: 4,
+    normal: 7,
+    hard: 9
 }
 
 export const spawnRules = [
         "Only in deepslate levels",
-        "In all biomes besides the Deep Dark"
+        "In all biomes besides the Deep Dark",
+        "Note: By default the Mauled replaces 20% of vanilla skeletons in deepslate layers. This can be changed in the Config!"
 ]
 
 <Tabs queryString="overview-tab">
-    <TabItem value={"showcase"} label={"View"}>
-        <ShowcaseBlock image="img/mauled.png"/>
+    <TabItem value={"image"} label={"Image"}>
+        <ShowcaseBlock image="img/mauled.gif"/>
     </TabItem>
     <TabItem value={"attributes"} label={"Attributes"}>
         <EntityAttributes
@@ -58,4 +60,4 @@ However, if you get too close, it will switch to a sword and try to close distan
 
 When the Mauled is half dead, it sheds its flesh (sometimes dropping rotten flesh) and becomes faster, prefers the sword and tries to hunt you.
 
-
+[Here you can see the Mauled in action](https://youtu.be/_cI0tAXjFJw)

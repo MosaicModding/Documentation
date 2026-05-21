@@ -1,0 +1,39 @@
+---
+title: Lanternfish
+sidebar_position: 3
+---
+import ShowcaseBlock from "../src/components/ShowcaseBlock";
+import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
+import SpawnConfig, {Dimension} from "../src/components/SpawnConfig";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+export const spawnRules = [
+    "Can only spawn below y=16",
+    "Can only spawn if the light level at the spawning position is 0",
+    "Can spawn in all biomes except Lush Caves",
+    "Can only spawn in water"
+]
+
+<Tabs queryString="overview-tab">
+    <TabItem value={"image"} label={"Image"}>
+        <ShowcaseBlock image="img/lanternfish.png"/>
+    </TabItem>
+    <TabItem value={"attributes"} label={"Attributes"}>
+        <EntityAttributes
+            health={3}
+            behavior={MobBehavior.Passive}
+            speed={["Always 0.3"]}
+        />
+    </TabItem>
+    <TabItem value={"spawning"} label={"Spawning"}>
+        <SpawnConfig
+            dim={Dimension.Overworld}
+            amount={"Between 4 and 6 per chunk"}
+            spawnRules={spawnRules}
+        />
+    </TabItem>
+</Tabs>
+
+The Lanternfish is a new Mob that tries to avoid light and glows. When the Lanternfish is hurt it will stop glowing for a few seconds. <br/>
+On death the Lanternfish drops `Raw Lanternfish` and has a `0.05` chance of dropping Bonemeal.

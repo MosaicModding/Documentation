@@ -1,0 +1,48 @@
+---
+title: Bouldering Zombie
+sidebar_position: 1
+---
+import ShowcaseBlock from "../src/components/ShowcaseBlock";
+import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
+import SpawnConfig, {Dimension} from "../src/components/SpawnConfig";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+export const unarmed = {
+    type: WeaponType.Unarmed ,
+    easy: 3,
+    normal: 5,
+    hard: 7
+}
+
+export const spawnRules = [
+    "Only in deepslate levels",
+    "In all biomes besides the Deep Dark",
+    "Gets more common the further you go down",
+    "Note: By default this zombie replaces every vanilla zombie in deepslate layers. This can be changed in the Config!"
+]
+
+<Tabs queryString="overview-tab">
+    <TabItem value={"image"} label={"Image"}>
+        <ShowcaseBlock image="img/bouldering_zombie.png"/>
+    </TabItem>
+    <TabItem value={"attributes"} label={"Attributes"}>
+        <EntityAttributes
+            health={23}
+            behavior={MobBehavior.Hostile}
+            attacks={[unarmed]}
+            speed={["Always 0.23"]}
+        />
+    </TabItem>
+    <TabItem value={"spawning"} label={"Spawning"}>
+        <SpawnConfig
+            dim={Dimension.Overworld}
+            amount={"Between 4 and 6 per chunk"}
+            spawnRules={spawnRules}
+        />
+    </TabItem>
+</Tabs>
+
+The **Bouldering Zombie** is a new Zombie variant that is home to the deepslate layers of the world and can climb. <br/>
+It is taller than a regular Zombie and deals more damage.<br/>
+However, the **Bouldering Zombie** is very sensitive to _fire_, meaning that it will deal `1.5` times as much damage.

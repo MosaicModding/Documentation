@@ -101,7 +101,7 @@ a.no-underline {
     border-bottom: 1px solid var(--box-outline);
 }
 
-.hearts {
+.mc_icons {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -109,7 +109,7 @@ a.no-underline {
     max-width: 100%;
 }
 
-.hearts img {
+.mc_icons img {
     width: 11px;
     height: 11px;
 }

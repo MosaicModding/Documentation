@@ -76,7 +76,7 @@ const config: Config = {
               routeBasePath: "cosmetics",
               sidebarPath: require.resolve(`./sidebar/cosmetics.ts`),
           },
-      ],
+      ]/*, TODO readd once needed
       ["@docusaurus/plugin-content-docs",
           {
               id: "plaster",
@@ -93,6 +93,7 @@ const config: Config = {
               sidebarPath: require.resolve(`./sidebar/tessera.ts`),
           },
       ]
+      */
   ],
 
   themeConfig: {
@@ -119,7 +120,7 @@ const config: Config = {
           position: 'left',
           docsPluginId: 'paintersinc',
           label: 'Painter\'s Inc',
-        },
+        }/*, TODO readd once needed
         {
           type: 'docSidebar',
           sidebarId: 'plasterSidebar',
@@ -133,7 +134,7 @@ const config: Config = {
           position: 'left',
           docsPluginId: 'tessera',
           label: 'Tessera',
-        },
+        },*/
       ],
     },
     footer: {
@@ -158,7 +159,8 @@ const config: Config = {
                   {
                       label: 'Cosmetics',
                       to: '/cosmetics/about',
-                  },
+                  }
+                  /*, TODO readd once needed
                   {
                       label: 'Tessera',
                       to: '/tessera/about',
@@ -167,6 +169,7 @@ const config: Config = {
                       label: 'Plaster',
                       to: '/plaster/about',
                   },
+                   */
               ],
           },
         {

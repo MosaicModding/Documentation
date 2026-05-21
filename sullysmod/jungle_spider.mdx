@@ -1,0 +1,59 @@
+---
+title: Jungle Spider
+sidebar_position: 2
+---
+import ShowcaseBlock from "../src/components/ShowcaseBlock";
+import EntityAttributes, {MobBehavior, WeaponType} from "../src/components/EntityAttributes";
+import SpawnConfig, {Dimension} from "../src/components/SpawnConfig";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+export const unarmed = {
+    type: WeaponType.Unarmed ,
+    easy: 2,
+    normal: 2,
+    hard: 3
+}
+
+export const spawnRules = [
+    "Can spawn in any Jungle Biome"
+]
+
+<Tabs queryString="overview-tab">
+    <TabItem value={"image"} label={"Image"}>
+        <ShowcaseBlock image="img/jungle_spider.png"/>
+    </TabItem>
+    <TabItem value={"attributes"} label={"Attributes"}>
+        <EntityAttributes
+            health={18}
+            behavior={MobBehavior.Neutral}
+            attacks={[unarmed]}
+            speed={["Always 0.3"]}
+        />
+    </TabItem>
+    <TabItem value={"spawning"} label={"Spawning"}>
+        <SpawnConfig
+            dim={Dimension.Overworld}
+            amount={"Between 3 and 6 per chunk"}
+            spawnRules={spawnRules}
+        />
+    </TabItem>
+</Tabs>
+
+Each **Jungle Spider** has two venoms, one random _beneficial_ effect and one random _harmful_ effect. <br/>
+When a **Jungle Spider** attacks the player, it will give the player these effects.
+The two colours on the **Jungle Spider's** back can help indicate the effects of the venom.
+
+The effect duration depends on the game's difficulty. <br/>
+
+| Difficulty | Duration |
+|------------|----------|
+| Easy       | 5 sec    |
+| Normal     | 10 sec   |
+| Hard       | 15 sec   |
+
+## Glass Vial
+<ShowcaseBlock image="img/venom_vials.gif">
+    You can craft a **Glass Vial**, which you can use to collect the **Jungle Spider's** venom. <br/>
+    When drinking, both effects will be applied.
+</ShowcaseBlock>
