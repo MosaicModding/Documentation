@@ -2,3 +2,43 @@
 title: Bug Meat
 sidebar_position: 14
 ---
+import FoodShowcase from "../src/components/FoodShowcase";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+export const hunger = {
+    name: "Hunger",
+    probability: 100,
+    duration: "30 sec"
+}
+
+export const nausea = {
+    name: "Nausea",
+    probability: 100,
+    duration: "30 sec"
+}
+
+export const haste = {
+    name: "Haste",
+    probability: 100,
+    duration: "30 sec"
+}
+
+<Tabs queryString="variant">
+    <TabItem value={"raw"} label={"Raw"}>
+        <FoodShowcase
+            image="img/bug_meat.png"
+            nutrition={2}
+            saturation={2.4}
+            effects={[hunger, nausea]}
+        ></FoodShowcase>
+    </TabItem>
+    <TabItem value={"cooked"} label={"Cooked"}>
+        <FoodShowcase
+            image="img/cooked_bug_meat.png"
+            nutrition={6}
+            saturation={7.2}
+            effects={[haste]}
+        ></FoodShowcase>
+    </TabItem>
+</Tabs>

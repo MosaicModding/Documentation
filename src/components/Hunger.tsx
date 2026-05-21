@@ -2,25 +2,25 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import React from "react";
 import calculateHalfFull from "@site/src/util/CalculateHalfFull";
 
-export default function Hearts(props: any) {
-    const fullImage = useBaseUrl("/img/full_heart.png");
-    const halfImage = useBaseUrl("/img/half_heart.png");
-    let heartAmount = calculateHalfFull(props.amount);
+export default function Hunger(props: any) {
+    const fullImage = useBaseUrl("/img/full_hunger.png");
+    const halfImage = useBaseUrl("/img/half_hunger.png");
+    let hungerAmount = calculateHalfFull(props.amount);
     return (
         <div className={"mc_icons"}>
             {props.amount} (
-            {Array.from({ length: heartAmount.full }).map((_, index) => (
+            {Array.from({ length: hungerAmount.full }).map((_, index) => (
                 <img
                     key={index}
                     src={fullImage}
-                    alt={"Full Heart icon"}
+                    alt={"Full Hunger icon"}
                 />
             ))}
-            {Array.from({ length: heartAmount.half }).map((_, index) => (
+            {Array.from({ length: hungerAmount.half }).map((_, index) => (
                 <img
                     key={index}
                     src={halfImage}
-                    alt={"Half Heart icon"}
+                    alt={"Half Hunger icon"}
                 />
             ))}
             )
